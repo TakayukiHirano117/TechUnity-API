@@ -1,0 +1,12 @@
+name: TechUnity API CI/CD Pipeline
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run : echo "Hello, World!"
