@@ -82,6 +82,10 @@ jobs:
           task-definition: ${{ env.ECS_TASK_DEFINITION_API }}
           container-name: api
           image: ${{ env.API_IMAGE_URI }}
+          environment-variables: |
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
+            NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+            NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
 
       - name: Deploy ECS task
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
