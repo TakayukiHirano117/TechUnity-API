@@ -42,6 +42,5 @@ jobs:
         run: |
           docker image tag temp_techunity-api-image:latest $ECR_REGISTRY/$ECR_REPOSITORY:${{github.sha}}
           docker image push $ECR_REGISTRY/$ECR_REPOSITORY:${{github.sha}}
-          echo $ECR_REGISTRY/$ECR_REPOSITORY:${{github.sha}} > api-image-uri.txt
 
 # Deploy
